@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -9,9 +10,25 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const routes = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+  ];
+
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html className="p-5" lang="en">
+      <body className={inter.className}>
+        <nav>
+          <ul className="flex divide-x gap-1">
+            {routes.map((route, index) => (
+              <li className={index !== 0 ? "pl-1" : ""} key={index}>
+                <Link href={route.path}>{route.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        {children}
+      </body>
     </html>
   );
 }
