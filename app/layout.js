@@ -1,8 +1,8 @@
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Poppins({ subsets: ["latin"], weight: "900" });
 
 export const metadata = {
   title: "Create Next App",
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html className="p-5" lang="en">
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <nav>
           <ul className="flex divide-x gap-1">
             {routes.map((route, index) => (
