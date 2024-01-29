@@ -1,5 +1,11 @@
+import { notFound } from "next/navigation";
+
 export default function Blogs({ params }) {
   const { id } = params;
+
+  if (id === "3") {
+    notFound();
+  }
 
   return (
     <div className="mt-10">
