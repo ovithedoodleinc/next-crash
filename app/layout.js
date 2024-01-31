@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Blogs", path: "/blogs" },
+    { name: "Posts", path: "/posts" },
   ];
 
   return (
